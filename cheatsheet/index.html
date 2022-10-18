@@ -7,10 +7,32 @@
   <meta charset="utf-8">
   <meta name="description" content="Keyword rich description of the site's purpose">
   <meta name="author" content="John Van Brocklin">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <h1><a href="../index.html">Go Back?</a></h1>
+  <style>
+    .button-go-back {
+    width: 150px;
+    height: 50px;
+    float: right;
+    background-color: #aaa;
+    border: solid black;
+    border-radius: 25px;
+  }
+  .button-go-back a {
+    line-height: 5px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #000;
+  }
+  </style>
+  <div class="button-go-back">
+    <h1><a href="../index.html">Go Back?</a></h1>
+  </div>
   <main>
     <h1>HTML5 Reference Document</h1>
     <section id="text-based-semantics">
