@@ -21,6 +21,7 @@ body {
     display: inline-flex;
     height: 75px;
     background-color: #deb887;
+    margin-bottom: 3rem;
 }
 
 
@@ -34,5 +35,5 @@ body {
     background-color: brown;
     border: 5px solid brown;
     border-radius: 5rem;
-    border-width: 10px;
+    border-width: 20px;
 }
