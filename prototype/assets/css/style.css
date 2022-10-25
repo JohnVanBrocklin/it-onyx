@@ -57,7 +57,7 @@ header nav a:active {
     color: black;
 }
 
-.img_gordo {
+#img {
     float: right;
     border: solid white;
     margin-top: 2.5rem;
@@ -65,46 +65,46 @@ header nav a:active {
     margin-bottom: 2.5rem;
 }
 
-.old_reliable {
+#old_reliable {
     margin-top: 2.5rem;
     padding-bottom: 2.5rem;
 }
 
-.the_mission {
+#the_mission {
     padding-bottom: 2.5rem;
 }
 
-.jupiter-am {
+#jupiter-am {
     padding-bottom: 2.5rem;
 }
 
-.the_journey {
+#the_journey {
     padding-bottom: 2.5rem;
 }
 
-.extra_content {
+#extra_content {
     padding-bottom: 2.5rem;
     border-bottom: solid white;
 }
 
-.table_la_liga {
+#table_la_liga {
     padding-bottom: 2.5rem;
     padding-top: 2.5rem;
 }
 
-.ordered_list {
+#ordered_list {
     padding-bottom: 2.5rem;
 }
 
-.unordered_list {
+#unordered_list {
     padding-bottom: 2.5rem;
 }
 
-.definition_list {
+#definition_list {
     padding-bottom: 1rem;
 }
 
-.footer {
+#footer {
     border: solid white;
     border-radius: 10px 10px 0 0;
     background-color: white;
@@ -112,7 +112,7 @@ header nav a:active {
     text-align: center;
 }
 
-.footer a {
+#footer a {
     color: black;
 }
 
@@ -135,13 +135,13 @@ header nav a:active {
         display:block;
     }
 
-    .old_reliable {
+    #old_reliable {
         padding-top: auto;
     }
 }
 
 @media screen and (max-width: 600px) {
-    .img_gordo {
+    .img {
         float: none;
         border: none;
     }
