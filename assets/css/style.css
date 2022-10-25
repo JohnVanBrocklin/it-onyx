@@ -1,3 +1,30 @@
+html {
+    box-sizing: border-box;
+    margin: 25px;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+:root {
+    --ff-light-300: 'Montserrat', sans-serif;
+    --ff-thin-100: 'Inter', sans-serif;
+}
+
 body {
     background-color: burlywood;
+    font-family: var(--ff-thin-100);
+}
+
+header.primary {
+    font-family: var(--ff-light-300);
+    text-transform: uppercase;
+}
+
+header.primary nav a {
+    color: black;
+    text-decoration: none;
 }
