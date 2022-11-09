@@ -12,8 +12,24 @@ html {
 
 
 body {
-    background-color: #011C26;
     font-family: 'Inter', sans-serif;
+    background-color: #414141;
+}
+
+/* ------------- Utility Classes ------------- */
+
+.container {
+    margin: auto;
+    padding: 40px;
+}
+
+.img-right {
+    float: right;
+    border: 2px solid #BFAA8F;
+    padding: 5px;
+    border-radius: 20px 0;
+    max-width: calc(50% - 20%);
+    margin: 20px 0 20px 20px;
 }
 
 /* 
@@ -34,33 +50,85 @@ margin: 40px auto;
 */
 
 main {
-    background-color: #ffffff;
+    background-color: #262626;
     width: 80vw;
     max-width: 1140px;
     margin: 40px auto;
-    border: 2px solid #049DBF;
+    border: 3px solid #BFAA8F;
     border-radius: 4px;
+    color: #BFBFBF;
 }
 
 header.primary {
     padding: 20px;
-    background-image: url("../img/bg_2.webp");
+    background-image: url("../img/bg_1.jpg");
+    background-repeat: no-repeat;
     background-size: cover;
+    color: #BFBFBF;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    border-bottom: 3px solid #BFAA8F;
+}
+
+header.primary .hgroup {
+    width: 70%;
+}
+
+header.primary nav {
+    width: 35%;
 }
 
 header.primary h1 a {
-    color: #ffffff;
+    color: #BFBFBF;
     text-shadow: 2.5px 2.5px #000000;
     font-size: 2.5rem;
     text-decoration: none;
 }
 
 header.primary h2 {
-    color: #ffffff;
+    color: #BFBFBF;
     text-shadow: 2px 2px #000000;
     font-size: 1.8rem;
 }
 
 header.primary h1, header.primary h2 {
     margin: 0;
+}
+
+header.primary nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+header.primary nav a {
+    display: block;
+    background-color: rgba(0, 0, 0, .6);
+    color: #fff;
+    padding: 10px;
+    border: 1px solid #BFAA8F;
+    margin-top: 10px;
+    border-radius: 20px 0;
+    border-right: 10px solid rgb(190, 169, 142);
+    text-decoration: none;
+    text-align: right;
+    transition: .5s;
+}
+
+header.primary nav a:hover {
+    background-color: rgba(190, 169, 142, 1);
+    text-decoration: underline;
+    transition: .5s;
+}
+
+#content {
+    line-height: 1.8;
+}
+
+#content h2, #content h3{
+    color: #BFAA8F;
+    border-left: 7.5px solid #414141;
+    padding: 5px 7.5px;
+    border-radius: 15px 0;
 }
