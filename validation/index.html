@@ -13,56 +13,56 @@
     <h1>New Patient Registration</h1>
     <h4>Please fill out the fom below</h4>
 
-    <form id="FirstName" action="https://brucebauer.info/assets/ITEC3650/datadump.php">
+    <form id="Registration" action="https://brucebauer.info/assets/ITEC3650/datadump.php">
         <label for="fName" class="formlabel">First Name:</label>
         <input type="text" id="fName" name="fName" size="30" maxlength="30">
-    </form>
 
-    <form id="MiddleInitial" action="https://brucebauer.info/assets/ITEC3650/datadump.php">
+        <br>
+
         <label for="mInitial" class="formlabel">Middle Initial:</label>
-        <input type="text" name="MiddleInitial", size="1", maxlength="1">
-    </form>
+        <input type="text" name="MiddleInitial" size="1" maxlength="1">
 
-    <form id="LastName" action="https://brucebauer.info/assets/ITEC3650/datadump.php">
+        <br>
+
         <label for="lName" class="formlabel">Last Name:</label>
-        <input type="text" name=LastName, size=30, maxlength=30>
-    </form>
+        <input type="text" name="LastName" size="30" maxlength="30">
 
-    <form id="Email" action="https://brucebauer.info/assets/ITEC3650/datadump.php">
+        <br>
+
         <label for="Email" class="formlabel">Email:</label>
-        <input type="email" name=Email, size="30", maxlength="30">
-    </form>
+        <input type="email" name="Email" size="30" maxlength="30">
 
-    <form id="Sex" action="https://brucebauer.info/assets/ITEC3650/datadump.php">
+        <br>
+
         <label for="Sex" class="formlabel">Sex:</label>
         <label for="Male"><input type="radio" name="sex" id="M" value="M">Male</label>
         <label for="Female"><input type="radio" name="sex" id="F" value="F">Female</label>
         <label for="N/A"><input type="radio" name="sex" id="N" value="N">N/A</label>
-    </form>
 
-    <form id="Birthday" action="https://brucebauer.info/assets/ITEC3650/datadump.php">
+        <br>
+
         <label for="Birthday" class="formlabel">Birthday:</label>
-        <input type="text" name=Birthday, size=8, maxlength=8>
-    </form>
+        <input type="text" name="Birthday" size="8" maxlength="8">
 
-    <form id="Height" action="https://brucebauer.info/assets/ITEC3650/datadump.php">
+        <br>
+
         <label for="Height" class="formlabel">Height (inches):</label>
-        <input type="text" name=Height, size=3, maxlength=3>
-    </form>
+        <input type="text" name="Height" size="3" maxlength="3">
 
-    <form id="Weight" action="https://brucebauer.info/assets/ITEC3650/datadump.php">
+        <br>
+
         <label for="Weight" class="formlabel">Weight (pounds):</label>
-        <input type="text" name=Weight, size=3, maxlength=3>
-    </form>
+        <input type="text" name="Weight" size="3" maxlength="3">
 
-    <hr>
+        <br>
 
-    <form id="PhoneNumber" action="https://brucebauer.info/assets/ITEC3650/datadump.php">
+        <hr>
+
         <label for="phoneNumber" class="formlabel">Phone Number:</label>
-        <input type="text" name=PhoneNumber, size=14, maxlength=14>
-    </form>
+        <input type="text" name="PhoneNumber" size="14" maxlength="14">
 
-    <form id="MaritalStatus" action="https://brucebauer.info/assets/ITEC3650/datadump.php">
+        <br>
+
         <label for="maritalStatus" class="formlabel">Marital Status:</label>
         <select name="MaritalStatus" id="MaritalStatus">
             <option value="">Select a Status...</option>
@@ -72,16 +72,16 @@
             <option value="L">Legally Separated</option>
             <option value="W">Widowed</option>
         </select>
-    </form>
 
-    <form id="Address" action="https://brucebauer.info/assets/ITEC3650/datadump.php">
+        <br>
+
         <label for="Address" class="formlabel">Address:</label>
-        <input type="text" name=Address, size=30, maxlength=30>
-    </form>
+        <input type="text" name="Address" size="30" maxlength="30">
 
-    <form id="City" action="https://brucebauer.info/assets/ITEC3650/datadump.php">
+        <br>
+
         <label for="City" class="formlabel">City/State/Zip:</label>
-        <input type="text" name=City, size=30, maxlength=30> ,
+        <input type="text" name="City" size="30" maxlength="30"> ,
         <select name="State">
             <option value="">Select a State...</option>
             <option value="AL">Alabama</option>
@@ -136,27 +136,25 @@
             <option value="WI">Wisconsin</option>
             <option value="WY">Wyoming</option>
         </select> ,
-        <input type="text" name=Zip, size=5, maxlength=5>
-    </form>
+        <input type="text" name="Zip" size="5" maxlength="5">
 
-    <hr>
+        <hr>
 
-    <form id="Medications" action="https://brucebauer.info/assets/ITEC3650/datadump.php">
         <label for="Medications" class="formlabel">Taking Medications:</label>
         <label for="Yes"><input type="radio" name=Medications id="Y" value="Y">Yes</label>
         <label for="No"><input type="radio" name=Medications id="N" value="N">No</label>
-    </form>
 
-    <form id="MedicationsList" action="https://brucebauer.info/assets/ITEC3650/datadump.php">
+        <br>
+
         <label for="MedicationsList" class="formlabel">If yes, list medications here:</label>
-        <textarea id="MedicationsList" name=MedicationsList, rows=3, cols=30>
-    </textarea>
-    </form>
+        <textarea id="MedicationsList" name="MedicationsList" rows="3" cols="30">
+        </textarea>
 
-    <hr>
+        <hr>
 
-    <form id="Submit" action="https://brucebauer.info/assets/ITEC3650/datadump.php">
         <input type="submit" value="Submit Patient Form" name="SubmitButton">
+
+    </form>
 </body>
 
 </html>
