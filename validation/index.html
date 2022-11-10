@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation Assignment</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <h1>New Patient Registration</h1>
+    <h4>Please fill out the fom below</h4>
+
+    <form id="FirstName" action="https://brucebauer.info/assets/ITEC3650/datadump.php">
+        <label for="fName" class="formlabel">First Name:</label>
+        <input type="text" id="fName" name="fName" size="30" maxlength="30">
+    </form>
+
+    <form id="MiddleInitial" action="https://brucebauer.info/assets/ITEC3650/datadump.php">
+        <label for="mInitial" class="formlabel">Middle Initial:</label>
+        <input type="text" name="MiddleInitial", size="1", maxlength="1">
+    </form>
+
+    <form id="LastName" action="https://brucebauer.info/assets/ITEC3650/datadump.php">
+        <label for="lName" class="formlabel">Last Name:</label>
+        <input type="text" name=LastName, size=30, maxlength=30>
+    </form>
+
+    <form id="Email" action="https://brucebauer.info/assets/ITEC3650/datadump.php">
+        <label for="Email" class="formlabel">Email:</label>
+        <input type="email" name=Email, size="30", maxlength="30">
+    </form>
+
+    <form id="Sex" action="https://brucebauer.info/assets/ITEC3650/datadump.php">
+        <label for="Sex" class="formlabel">Sex:</label>
+        <label for="Male"><input type="radio" name="sex" id="M" value="M">Male</label>
+        <label for="Female"><input type="radio" name="sex" id="F" value="F">Female</label>
+        <label for="N/A"><input type="radio" name="sex" id="N" value="N">N/A</label>
+    </form>
+
+    <form id="Birthday" action="https://brucebauer.info/assets/ITEC3650/datadump.php">
+        <label for="Birthday" class="formlabel">Birthday:</label>
+        <input type="text" name=Birthday, size=8, maxlength=8>
+    </form>
+
+    <form id="Height" action="https://brucebauer.info/assets/ITEC3650/datadump.php">
+        <label for="Height" class="formlabel">Height (inches):</label>
+        <input type="text" name=Height, size=3, maxlength=3>
+    </form>
+
+    <form id="Weight" action="https://brucebauer.info/assets/ITEC3650/datadump.php">
+        <label for="Weight" class="formlabel">Weight (pounds):</label>
+        <input type="text" name=Weight, size=3, maxlength=3>
+    </form>
+
+    <hr>
+
+    <form id="PhoneNumber" action="https://brucebauer.info/assets/ITEC3650/datadump.php">
+        <label for="phoneNumber" class="formlabel">Phone Number:</label>
+        <input type="text" name=PhoneNumber, size=14, maxlength=14>
+    </form>
+
+    <form id="MaritalStatus" action="https://brucebauer.info/assets/ITEC3650/datadump.php">
+        <label for="maritalStatus" class="formlabel">Marital Status:</label>
+        <select name="MaritalStatus" id="MaritalStatus">
+            <option value="">Select a Status...</option>
+            <option value="S">Single</option>
+            <option value="M">Married</option>
+            <option value="D">Divorced</option>
+            <option value="L">Legally Separated</option>
+            <option value="W">Widowed</option>
+        </select>
+    </form>
+
+    <form id="Address" action="https://brucebauer.info/assets/ITEC3650/datadump.php">
+        <label for="Address" class="formlabel">Address:</label>
+        <input type="text" name=Address, size=30, maxlength=30>
+    </form>
+
+    <form id="City" action="https://brucebauer.info/assets/ITEC3650/datadump.php">
+        <label for="City" class="formlabel">City/State/Zip:</label>
+        <input type="text" name=City, size=30, maxlength=30> ,
+        <select name="State">
+            <option value="">Select a State...</option>
+            <option value="AL">Alabama</option>
+            <option value="AK">Alaska</option>
+            <option value="AZ">Arizona</option>
+            <option value="AR">Arkansas</option>
+            <option value="CA">California</option>
+            <option value="CO">Colorado</option>
+            <option value="CT">Connecticut</option>
+            <option value="DE">Delaware</option>
+            <option value="DC">District Of Columbia</option>
+            <option value="FL">Florida</option>
+            <option value="GA">Georgia</option>
+            <option value="HI">Hawaii</option>
+            <option value="ID">Idaho</option>
+            <option value="IL">Illinois</option>
+            <option value="IN">Indiana</option>
+            <option value="IA">Iowa</option>
+            <option value="KS">Kansas</option>
+            <option value="KY">Kentucky</option>
+            <option value="LA">Louisiana</option>
+            <option value="ME">Maine</option>
+            <option value="MD">Maryland</option>
+            <option value="MA">Massachusetts</option>
+            <option value="MI">Michigan</option>
+            <option value="MN">Minnesota</option>
+            <option value="MS">Mississippi</option>
+            <option value="MO">Missouri</option>
+            <option value="MT">Montana</option>
+            <option value="NE">Nebraska</option>
+            <option value="NV">Nevada</option>
+            <option value="NH">New Hampshire</option>
+            <option value="NJ">New Jersey</option>
+            <option value="NM">New Mexico</option>
+            <option value="NY">New York</option>
+            <option value="NC">North Carolina</option>
+            <option value="ND">North Dakota</option>
+            <option value="OH">Ohio</option>
+            <option value="OK">Oklahoma</option>
+            <option value="OR">Oregon</option>
+            <option value="PA">Pennsylvania</option>
+            <option value="RI">Rhode Island</option>
+            <option value="SC">South Carolina</option>
+            <option value="SD">South Dakota</option>
+            <option value="TN">Tennessee</option>
+            <option value="TX">Texas</option>
+            <option value="UT">Utah</option>
+            <option value="VT">Vermont</option>
+            <option value="VA">Virginia</option>
+            <option value="WA">Washington</option>
+            <option value="WV">West Virginia</option>
+            <option value="WI">Wisconsin</option>
+            <option value="WY">Wyoming</option>
+        </select> ,
+        <input type="text" name=Zip, size=5, maxlength=5>
+    </form>
+
+    <hr>
+
+    <form id="Medications" action="https://brucebauer.info/assets/ITEC3650/datadump.php">
+        <label for="Medications" class="formlabel">Taking Medications:</label>
+        <label for="Yes"><input type="radio" name=Medications id="Y" value="Y">Yes</label>
+        <label for="No"><input type="radio" name=Medications id="N" value="N">No</label>
+    </form>
+
+    <form id="MedicationsList" action="https://brucebauer.info/assets/ITEC3650/datadump.php">
+        <label for="MedicationsList" class="formlabel">If yes, list medications here:</label>
+        <textarea id="MedicationsList" name=MedicationsList, rows=3, cols=30>
+    </textarea>
+    </form>
+
+    <hr>
+
+    <form id="Submit" action="https://brucebauer.info/assets/ITEC3650/datadump.php">
+        <input type="submit" value="Submit Patient Form" name="SubmitButton">
+</body>
+
+</html>
