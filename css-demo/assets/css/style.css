@@ -28,7 +28,7 @@ body {
     border: 2px solid #BFAA8F;
     padding: 5px;
     border-radius: 20px 0;
-    max-width: calc(50% - 20%);
+    max-width: calc(50% - 20px);
     margin: 20px 0 20px 20px;
 }
 
@@ -56,7 +56,7 @@ main {
     margin: 40px auto;
     border: 3px solid #BFAA8F;
     border-radius: 4px;
-    color: #BFBFBF;
+    color: white;
 }
 
 header.primary {
@@ -64,7 +64,7 @@ header.primary {
     background-image: url("../img/bg_1.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    color: #BFBFBF;
+    color: white;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
@@ -80,14 +80,14 @@ header.primary nav {
 }
 
 header.primary h1 a {
-    color: #BFBFBF;
+    color: white;
     text-shadow: 2.5px 2.5px #000000;
     font-size: 2.5rem;
     text-decoration: none;
 }
 
 header.primary h2 {
-    color: #BFBFBF;
+    color: white;
     text-shadow: 2px 2px #000000;
     font-size: 1.8rem;
 }
@@ -131,4 +131,27 @@ header.primary nav a:hover {
     border-left: 7.5px solid #414141;
     padding: 5px 7.5px;
     border-radius: 15px 0;
+}
+
+#blog {
+    padding: 20px 0;
+    border-top: 6px double #BFAA8F;
+    border-bottom: 6px double #BFAA8F;
+}
+
+#blog > h2 {
+    color: #BFAA8F;
+    text-shadow: 2px 2px #000;
+    font-size:2.2rem;
+    margin-left:20px;
+}
+
+#blog article.post {
+    background: #fff;
+    margin: 20px;
+    padding: 20px;
+}
+
+#blog p, #blog footer, time.post-date {
+    color: #000;
 }
