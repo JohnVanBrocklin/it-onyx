@@ -7,9 +7,114 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    background-color: burlywood;
+    background-color: grey;
+    margin: 20px;
 }
 
+/* thomas section */
+
+.thomas-sidebar {
+    color: #BFAA8F;
+    grid-area: thomas-sidebar;
+    text-align: center;
+    width: 25vw;
+    margin-left: 20px;
+    background-color: #414141;
+    border-radius: 5px;
+    height: fit-content;
+  }
+
+  .thomas-content {
+    grid-area: thomas-content;
+    background-color: #414141;
+    border-radius: 5px;
+    margin-right: 20px;
+  }
+  
+  .thomas-content ul {
+    list-style-type: none;
+  }
+
+  .thomas-content a {
+    text-decoration: none;
+    color: #BFAA8F;
+  }
+
+  .thomas-content a:hover {
+    text-decoration: underline;
+  }
+
+  /* bruce section */
+
+  .bruce-sidebar {
+    grid-area: bruce-sidebar;
+    color: #BFAA8F;
+    text-align: center;
+    width: 25vw;
+    margin-left: 20px;
+    background-color: #414141;
+    border-radius: 5px;
+    height: fit-content;
+  }
+
+  .bruce-content {
+    grid-area: bruce-content;
+    background-color: #414141;
+    border-radius: 5px;
+    margin-right: 20px;
+  }
+  
+  .bruce-content ul {
+    list-style-type: none;
+  }
+
+  .bruce-content a {
+    text-decoration: none;
+    color: #BFAA8F;
+  }
+
+  .bruce-content a:hover {
+    text-decoration: underline;
+  }
+
+
+  .header {
+    grid-area: header;
+    margin-top: 25px;
+  }
+
+
+  .wrapper {
+    display: grid;
+    grid-gap: 40px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+               "header ........  ........"
+               "thomas-sidebar thomas-content thomas-content"
+               "bruce-sidebar bruce-content bruce-content"
+               "ann-sidebar ann-content ann-content";
+    color: #444;
+  }
+
+.box {
+  padding: 20px;
+  font-size: 150%;
+}
+
+.header {
+  color: #BFAA8F;
+  text-align: center;
+  width: fit-content;
+  margin-left: 20px;
+  background-color: #414141;
+  border-radius: 5px;
+}
+
+/* main */
+
 main {
-    background-color: white;
+  background-color: black;
+  height: 94.5vh;
+  border: 5px solid #BFAA8F;
+  border-radius: 2px;
 }
