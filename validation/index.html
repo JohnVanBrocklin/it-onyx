@@ -7,15 +7,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Validation Assignment</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/additional-methods.min.js"></script>
 </head>
 
 <body>
+    
     <h1>New Patient Registration</h1>
     <h4>Please fill out the fom below</h4>
 
+    </style>
     <form id="Registration" action="https://brucebauer.info/assets/ITEC3650/datadump.php">
         <label for="fName" class="formlabel">First Name:</label>
-        <input type="text" id="fName" name="fName" size="30" maxlength="30">
+        <input type="text" id="fName" name="fName" size="30" maxlength="30"
+                data-rule-required="true" data-msg-required="First Name is Required">
+        <label for="fName" class="error"></label>
 
         <br>
 
@@ -25,19 +32,27 @@
         <br>
 
         <label for="lName" class="formlabel">Last Name:</label>
-        <input type="text" name="LastName" size="30" maxlength="30">
+        <input type="text" name="LastName" size="30" maxlength="30"
+                data-rule-required="true" data-msg-required="Last Name is Required">
+        <label for="lName" class="error"></label>
 
         <br>
 
         <label for="Email" class="formlabel">Email:</label>
-        <input type="email" name="Email" size="30" maxlength="30">
+        <input type="email" name="Email" size="30" maxlength="30"
+                data-rule-required="true" data-msg-required="Email is Required">
+        <label for="Email" class="error"></label>
 
         <br>
 
         <label for="Sex" class="formlabel">Sex:</label>
         <label for="Male"><input type="radio" name="sex" id="M" value="M">Male</label>
         <label for="Female"><input type="radio" name="sex" id="F" value="F">Female</label>
-        <label for="N/A"><input type="radio" name="sex" id="N" value="N">N/A</label>
+        <label for="N/A"><input type="radio" name="sex" id="N" value="N"
+            data-rule-required="true" data-msg-required="Sex is Required">
+        N/A</label>
+
+        <label for="Sex" class="error"></label>
 
         <br>
 
@@ -155,6 +170,12 @@
         <input type="submit" value="Submit Patient Form" name="SubmitButton">
 
     </form>
+
+    <script>
+        $( "#Registration" ).validate({
+        
+        });
+    </script>
 </body>
 
 </html>
