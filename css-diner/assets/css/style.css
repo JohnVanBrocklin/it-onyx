@@ -5,9 +5,14 @@ img {
 .img-container {
     display: flex;
     justify-content: center;
-    margin-top: 30px;
+    margin-top: 2px;
 }
 body {
     height: 92vh;
     background-color: antiquewhite;
+}
+
+h1 {
+    margin-left: 70px;
+    margin-bottom: 0;
 }
