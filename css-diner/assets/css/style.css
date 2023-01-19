@@ -1,0 +1,13 @@
+img {
+    height: 500px;
+}
+
+.img-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+body {
+    height: 92vh;
+    background-color: antiquewhite;
+}
