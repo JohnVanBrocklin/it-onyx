@@ -29,6 +29,7 @@ body {
     background-color: #414141;
     border-radius: 5px;
     margin-right: 20px;
+    line-height: 2.5rem;
   }
 
   .thomas-content ul {
@@ -36,12 +37,11 @@ body {
   }
 
   .thomas-content a {
-    text-decoration: none;
     color: #BFAA8F;
   }
 
   .thomas-content a:hover {
-    text-decoration: underline;
+    text-decoration: none;
   }
 
   /* bruce section */
@@ -62,6 +62,7 @@ body {
     background-color: #414141;
     border-radius: 5px;
     margin-right: 20px;
+    line-height: 2.5rem;
   }
 
   .bruce-content ul {
@@ -69,12 +70,11 @@ body {
   }
 
   .bruce-content a {
-    text-decoration: none;
     color: #BFAA8F;
   }
 
   .bruce-content a:hover {
-    text-decoration: underline;
+    text-decoration: none;
   }
 
 
@@ -114,7 +114,7 @@ body {
 
 main {
   background-color: black;
-  height: 94.5vh;
+  height: fit-content;
   border: 5px solid #BFAA8F;
   border-radius: 2px;
 }

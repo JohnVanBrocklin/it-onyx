@@ -31,36 +31,45 @@
       margin-right: auto;
       margin-left: auto;
       text-shadow: 2px 2px #000;
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: 
+      "navy teal"
+      "blue aqua"
+      "footer footer";
     }
     #navy {
       background-color: #001f3f;
       width: 370px;
       height: 150px;
+      grid-area: navy;
       margin: 20px 10px 10px 20px;
     }
     #teal {
       background-color: #39CCCC;
       width: 370px;
       height: 150px;
+      grid-area: teal;
       margin: 20px 18px 10px 10px;
     }
     #blue {
       background-color: #0074D9;
       width: 370px;
       height: 150px;
+      grid-area: blue;
       margin: 10px 10px 10px 20px;
     }
     #aqua {
       background-color: #7FDBFF;
       width: 370px;
       height: 150px;
+      grid-area: aqua;
       margin: 10px 18px 10px 10px;
     }
     #footer {
       background-color: #666;
       width: 760px;
+      grid-area: footer;
       margin: 20px;
       margin-top: 10px;
     }
