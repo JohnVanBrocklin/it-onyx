@@ -9,15 +9,16 @@ function displayCircle() {
 
         // clear out any calculations
          document.getElementById("diameter").innerHTML = "";
-         document.getElementById("circumference").innerHTML = "";
-         document.getElementById("area").innerHTML = "";
 
          var radius; // string representation of the radius
          var radiusfp; // floating point value of radius
 
          var diameter;  // floating point radius
+         
          var circumference;
+         
          var area;
+         
          var result; // displayable result
 
          // read in the legs as a string
@@ -30,16 +31,12 @@ function displayCircle() {
          // Convert numbers from strings to Floating Point
          radiusfp = parseFloat( radius ); 
 
-         circumferencefp = parseFloat( circumference )
-
-         areafp = parseFloat( area )
-
          // calculate the diameter
          diameter = calcDiameter(radiusfp);
 
-         circumference = calcCircumference(circumferencefp);
+         circumference = calcCircumference(radius);
 
-         area = calcArea(areafp)
+         area = calcArea(radius);
 
          // display the diameter
          document.getElementById("diameter").innerHTML = diameter.toString();
@@ -58,21 +55,21 @@ function displayCircle() {
   }
 
 
-  function calcCircumference (c) 
+  function calcCircumference (radius) 
   {
     return 2 * Math.PI * radius;
   }
 
-  function calcArea (a) 
+  function calcArea (radius) 
   {
-    return radius * radius * Math.PI;
+    return Math.PI * radius * radius;
   }
   
   function clearForm()
 {
     document.getElementById("radius").value = "";
-    document.getElementById("leg1error").innerHTML = "";
-    document.getElementById("leg2").value = "";
-    document.getElementById("leg2error").innerHTML = "";
-    document.getElementById("hypotenuse").innerHTML = "";
+    document.getElementById("radiuserror").innerHTML = "";
+    document.getElementById("diameter").innerHTML = "";
+    document.getElementById("circumference").innerHTML = "";
+    document.getElementById("area").innerHTML = "";
 }
