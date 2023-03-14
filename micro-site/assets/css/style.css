@@ -130,7 +130,7 @@ header.primary {
 
     .colophon {
        position: absolute;
-       top: 125vh;
+       top: 230vh;
        width: 100%;
     }
 }
@@ -267,7 +267,8 @@ header.primary {
     justify-content: center;
     align-items: center;
     height: 80vh;
-    margin: 20px;
+    margin: 150px;
+    margin-bottom: 10px;
     gap: 20px;
 }
 
@@ -294,11 +295,20 @@ header.primary {
 }
 
 #projects-wrap {
+    margin: 100px;
+}
+
+.s-wrap {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
-    margin: 100px;
+}
+
+.section-head {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 40px;
 }
 
 .ext-cont {
