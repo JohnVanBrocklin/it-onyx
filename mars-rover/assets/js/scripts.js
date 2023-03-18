@@ -1,82 +1,87 @@
-async function GetStock() {
+function getPhotos() {
     "use strict";
 
-    // Get a reference to the form - Use the ID of the form
     var form = $("#myform");
-    
-    // Validate all of the for elements
     form.validate();
-    
-    // If all of the form elements are valid, the get the form values
     if (form.valid()) {
-        
-        var apiKey = "jy73ls4NWOd3gmH6FeCT7SMrBzThCEb4gYB5orIG"
-        var Rover = document.getElementById("Rover").value;
-        var PictureDate = document.getElementById("PictureDate").value;
 
-        /* URL for AJAX Call */
-        var myURL1 = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos:" + "/range/1/day/" + Rover + "/" + PictureDate + "?earth_date=2015-6-3&apiKey=" + apiKey;
-        var msg1Object = await fetch(myURL1);
-        /* Check the status */
-        if (msg1Object.status >= 200 && msg1Object.status <= 299) {  
-            var msg1JSONText = await msg1Object.text();
-            // Parse the JSON string into an oject
-            var msg1 =JSON.parse(msg1JSONText);          
-                var stockdate = [];
-                var stockvalue = [];
-                var numdays = msg1.results.length;
-                if (numdays > 0) {
-                    for (var i = 0; i < numdays; i++) {
-                        /* stock close value */
-                        stockvalue[i] = msg1.results[i].c;
-                        /* date is in Unix milleseconds - create a temporary date variable */
-                        var tempdate = new Date(msg1.results[i].t);
-                        /* extract the date string from the value */
-                        stockdate[i] = tempdate.toLocaleDateString();
-                    }
-                }
+        var photoDate = document.getElementById("photoDate").value;
+        var apiKey = "jy73ls4NWOd3gmH6FeCT7SMrBzThCEb4gYB5orIG";
 
+        var roverChoice;
+        if (document.getElementById("Curiosity").checked) {
+            roverChoice = document.getElementById("Curiosity").value;
+        }
+        if (document.getElementById("Opportunity").checked) {
+            roverChoice = document.getElementById("Opportunity").value;
+        }
+        if (document.getElementById("Spirit").checked) {
+            roverChoice = document.getElementById("Spirit").value;
+        }
 
-                var ctx0 = document.getElementById("chartjs-0");
-                var myChart = new Chart(ctx0, {
-                    "type":"line",
-                    "data": {
-                        "labels": stockdate,
-                        "datasets":[{"label":"Stock Close",
-                        "data": stockvalue,
-                        "fill":false,
-                        "borderColor":"rgb(75, 192, 192)",
-                        "lineTension":0.1}]},
-                        "options":{ 
-                            responsive: false,
-                            maintainAspectRatio: true,
+        var myURL = "https://api.nasa.gov/mars-photos/api/v1/rovers/" + roverChoice + "/photos?earth_date=" + photoDate + "&page=1&api_key=" + apiKey;
+        var myMethod = "GET";
+
+        $(document).ready(function () {
+
+            $.ajax({
+                method: myMethod,
+                url: myURL
+            })
+
+                .done(function (msg) {
+
+                    var numphotos = msg.photos.length;
+                    if (numphotos > 0) {
+                        for (var i = 0; i < 25; i++) {
+                            if (i < numphotos) {
+                                document.getElementById("image" + i).src = msg.photos[i].img_src;
+                                document.getElementById("image" + i).title = msg.photos[i].camera.full_name;
+                                document.getElementById("pull" + i).href = msg.photos[i].img_src;
+                                document.getElementById("text1").innerHTML = msg.photos.length + " photos found";
+                                document.getElementById("text2").innerHTML = "Click a photo to display full size";
+                            }
+
+                            else {
+                                document.getElementById("image" + i).src = "#";
+                                document.getElementById("anchor" + i).href = "#";
+                                document.getElementById("image" + i).style.display = "none";
+                            }
                         }
                     }
-                );            
-        }
-        else {
-            /* AJAX completed with error - probably invalid stock ticker symbol */
-            alert("Stock Not Found - Status: " + msg2Object.status)
-            return
-        }
+                })
+
+                .fail(function (msg) {
+                    alert("Rover Not Found - Status: " + msg.status);
+                });
+        });
     }
 }
 
-function ClearForm() {
-    document.getElementById("Rover").value = "";
-    document.getElementById("PictureDate").value = "";
-    document.getElementById("ceo").innerHTML = "";
-    document.getElementById("url").innerHTML = "";
-    document.getElementById("url").href = "";
-    document.getElementById("logo").src = "";
-    document.getElementById("StockValueTable").innerHTML = "";
-    document.getElementById("StockVolumeTable").innerHTML = "";
-    
-    /* Ugly Code to Erase Canvas */
-    var canvas0 = document.getElementById("chartjs-0");
-    var context0 = canvas0.getContext('2d');    
-    context0.clearRect(0, 0, canvas0.width, canvas0.height);
-    var canvas1 = document.getElementById("chartjs-1");
-    var context1 = canvas1.getContext('2d');    
-    context1.clearRect(0, 0, canvas1.width, canvas1.height);
+function clearform() {
+    for (var i = 0; i < 25; i++) {
+        document.getElementById("Curiosity").checked = false;
+        document.getElementById("Opportunity").checked = false;
+        document.getElementById("Spirit").checked = false;
+        document.getElementById("photoDate").value = "";
+        document.getElementById("roverError").innerHTML = "";
+        document.getElementById("photoDateError").innerHTML = "";
+        document.getElementById("image" + i).src = "#";
+        document.getElementById("anchor" + i).href = "";
+        document.getElementById("image" + i).title = "";
+        document.getElementById("text1").innerHTML = "";
+        document.getElementById("text2").innerHTML = "";
+    }
+}
+
+function getCuriosity() {
+    document.getElementById("photoDate").value = "2012-08-06";
+}
+
+function getOpportunity() {
+    document.getElementById("photoDate").value = "2004-01-26";
+}
+
+function getSpirit() {
+    document.getElementById("photoDate").value = "2004-01-05";
 }

@@ -2,90 +2,108 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
-    <meta name="description" content="Mars Rover Photo Explorer">
-    <meta name="author" content="John Van Brocklin">
-    <title>Mars Rover</title>
-    <link href="assets/css/style.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <meta name="author" content="John Van Brocklin">
+  <title>Mars Rover Photos</title>
+  <link href="assets/css/style.css" rel="stylesheet">
 </head>
 
 <body>
-    <form id="myform">
-        <div class="formcontainer">
-            <h2>Mars Rover Photo Explorer</h2>
-            <table border="1">
-                <tr>
-                    <th scope="col">Rover</th>
-                    <th scope="col">Mission Start</th>
-                    <th scope="col">Mission End</th>
-                </tr>
-                <tr>
-                    <td>Curiosity</td>
-                    <td>08/06/2012</td>
-                    <td>09/28/2019</td>
-                </tr>
-                <tr>
-                    <td>Opportunity</td>
-                    <td>01/26/2004</td>
-                    <td>06/11/2018</td>
-                </tr>
-                <tr>
-                    <td>Spirit</td>
-                    <td>01/05/2004</td>
-                    <td>03/21/2004</td>
-                </tr>
-            </table>
-            <h3>Select a rover and a picture date:</h3>
+  <form id="myform">
+      <h1>Mars Rover Photo Explorer</h1>
 
-            <label for="Rover">Rover:</label>
-            <label for="Curiosity"><input type="radio" name="rover" id="curiosity" value="curiosity"
-                    data-rule-required="true" data-msg-required="A Rover is Required">Curiosity</label>
-            <label for="Opportunity"><input type="radio" name="rover" id="opportunity"
-                    value="opportunity">Opportunity</label>
-            <label for="Spirit"><input type="radio" name="rover" id="spirit" value="spirit">Spirit</label><br>
+      <table border="1">
+        <thead>
+          <tr>
+            <th scope="col">Rover</th>
+            <th scope="col">Mission Start</th>
+            <th scope="col">Mission End</th>
+          </tr>
+        </thead>
+        
+        <tr>
+          <td>Curiosity</td>
+          <td>08/06/2012</td>
+          <td>09/28/2019</td>
+        </tr>
+        <tr>
+          <td>Opportunity</td>
+          <td>01/26/2004</td>
+          <td>06/11/2018</td>
+        </tr>
+        <tr>
+          <td>Spirit</td>
+          <td>01/05/2004</td>
+          <td>03/21/2004</td>
+        </tr>
+      </table>
 
-            <label class="formlabel">Picture Date:</label>
-            <input type="date" name="PictureDate" id="PictureDate" data-rule-required="true"
-                data-msg-required="Date is Required">
-            <label id="PictureDateError" for="PictureDate" class="error"></label><br>
+      <h2>Select a rover and a picture date:</h2>
 
-            <h3>Click a photo to display size:</h3>
-            <a href="image0"><img src="image0"></a>
-            <a href="image0"><img src="image1"></a>
-            <a href="image0"><img src="image2"></a>
-            <a href="image0"><img src="image3"></a>
-            <a href="image0"><img src="image4"></a>
-            <a href="image0"><img src="image5"></a>
-            <a href="image0"><img src="image6"></a>
-            <a href="image0"><img src="image7"></a>
-            <a href="image0"><img src="image8"></a>
-            <a href="image0"><img src="image9"></a>
-            <a href="image0"><img src="image10"></a>
-            <a href="image0"><img src="image11"></a>
-            <a href="image0"><img src="image12"></a>
-            <a href="image0"><img src="image13"></a>
-            <a href="image0"><img src="image14"></a>
-            <a href="image0"><img src="image15"></a>
-            <a href="image0"><img src="image16"></a>
-            <a href="image0"><img src="image17"></a>
-            <a href="image0"><img src="image18"></a>
-            <a href="image0"><img src="image19"></a>
-            <a href="image0"><img src="image20"></a>
-            <a href="image0"><img src="image21"></a>
-            <a href="image0"><img src="image22"></a>
-            <a href="image0"><img src="image23"></a>
-            <a href="image0"><img src="image24"></a><br><br>
+      <label class="formlabel">Rover: </label>
+  
+      <label for="Curiosity">
+        <input type="radio" onchange="getCuriosity()" name="roverChoice" id="Curiosity" value="Curiosity"
+          data-rule-required="true" data-msg-required=" | A Rover is Required">Curiosity
+      </label>
 
-            <input type="button" value="Search" id="Search" name="Search" onclick="GetStock();">
-            <input type="button" value="Clear" id="Clear" name="Clear" onclick="ClearForm();">
+      <label for="Opportunity">
+        <input type="radio" onchange="getOpportunity()" name="roverChoice" id="Opportunity" value="Opportunity">Opportunity
+      </label>
 
-    </form>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
-    <script src="assets/js/scripts.js"></script>
+      <label for="Spirit">
+        <input type="radio" onchange="getSpirit()" name="roverChoice" id="Spirit" value="Spirit">Spirit
+      </label>
+
+      <label for="roverChoice" class="error" id="roverError"></label>
+      <br><br>
+
+      <label class="formlabel" for="photoDate">Picture Date: </label>
+      <input type="date" id="photoDate" name="photoDate" data-rule-required="true"
+        data-msg-required=" | Please choose a date.">
+      <label class="error" for="photoDate" id="photoDateError"></label>
+      <br><br>
+
+      <input type="button" value="Search" name="Search" onclick="getPhotos();">
+      <input type="button" value="Clear" name="Clear" onclick="clearform();" novalidate="">
+      <p id="text1"></p>
+      <p id="text2"></p>
+
+      <div>
+        <a id="pull0" href="#"><img id="image0" src="none"></a>
+        <a id="pull1" href="#"><img id="image1" src="none"></a>
+        <a id="pull2" href="#"><img id="image2" src="none"></a>
+        <a id="pull3" href="#"><img id="image3" src="none"></a>
+        <a id="pull4" href="#"><img id="image4" src="none"></a>
+        <a id="pull5" href="#"><img id="image5" src="none"></a>
+        <a id="pull6" href="#"><img id="image6" src="none"></a>
+        <a id="pull7" href="#"><img id="image7" src="none"></a>
+        <a id="pull8" href="#"><img id="image8" src="none"></a>
+        <a id="pull9" href="#"><img id="image9" src="none"></a>
+        <a id="pull10" href="#"><img id="image10" src="none"></a>
+        <a id="pull11" href="#"><img id="image11" src="none"></a>
+        <a id="pull12" href="#"><img id="image12" src="none"></a>
+        <a id="pull13" href="#"><img id="image13" src="none"></a>
+        <a id="pull14" href="#"><img id="image14" src="none"></a>
+        <a id="pull15" href="#"><img id="image15" src="none"></a>
+        <a id="pull16" href="#"><img id="image16" src="none"></a>
+        <a id="pull17" href="#"><img id="image17" src="none"></a>
+        <a id="pull18" href="#"><img id="image18" src="none"></a>
+        <a id="pull19" href="#"><img id="image19" src="none"></a>
+        <a id="pull20" href="#"><img id="image20" src="none"></a>
+        <a id="pull21" href="#"><img id="image21" src="none"></a>
+        <a id="pull22" href="#"><img id="image22" src="none"></a>
+        <a id="pull23" href="#"><img id="image23" src="none"></a>
+        <a id="pull24" href="#"><img id="image24" src="none"></a>
+      </div>
+  </form>
+
+  <script src="assets/js/scripts.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+  <script src="http://www.datejs.com/build/date.js"></script>
 </body>
 
 </html>
