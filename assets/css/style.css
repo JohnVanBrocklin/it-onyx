@@ -30,10 +30,12 @@ body {
     border-radius: 5px;
     margin-right: 20px;
     line-height: 2.5rem;
+    font-size: 20px;
   }
 
   .thomas-content ul {
     list-style-type: none;
+    color: #BFAA8F;
   }
 
   .thomas-content a {
@@ -63,6 +65,7 @@ body {
     border-radius: 5px;
     margin-right: 20px;
     line-height: 2.5rem;
+    font-size: 20px;
   }
 
   .bruce-content ul {
